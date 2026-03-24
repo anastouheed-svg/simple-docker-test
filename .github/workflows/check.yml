@@ -1,0 +1,11 @@
+name: Easy Docker Test
+on: [push]
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and Run
+        run: |
+          docker build -t my-test-image .
+          docker run my-test-image
